@@ -1,10 +1,10 @@
 resource "aws_subnet" "private_subnet" {
-  vpc_id     = aws_vpc.vpc.id
+  vpc_id     = data.aws_ssm_parameter.vpc_id.value
   cidr_block = var.private_subnet_cidr
 }
 
 resource "aws_route_table" "private_rt" {
-  vpc_id = aws_vpc.vpc.id
+  vpc_id = data.aws_ssm_parameter.vpc_id.value
   route {
     cidr_block = "0.0.0.0/0"
     gateway_id = aws_nat_gateway.ngw.id
