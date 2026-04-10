@@ -24,4 +24,4 @@
 
 **Note**
 
-- vpc_id & sg_id: will be store ssm paramter store
+- vpc_id & sg_id: will be stored ssm paramter store
