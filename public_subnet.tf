@@ -17,3 +17,12 @@ resource "aws_route_table_association" "public_rta" {
   route_table_id = aws_route_table.public_rt.id
 }
 
+
+resource "aws_eip" "eip" {
+  
+}
+
+resource "aws_nat_gateway" "ngw" {
+  allocation_id = aws_eip.eip.id
+  subnet_id = aws_subnet.public_subnet.id
+}
