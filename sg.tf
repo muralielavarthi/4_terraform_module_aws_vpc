@@ -1,4 +1,5 @@
 resource "aws_security_group" "sg" {
+  name="{local.project}-${local.environment}-${local.application}-sg"
   egress {
     from_port = 0
     to_port = 0
@@ -7,7 +8,11 @@ resource "aws_security_group" "sg" {
   }
 
   tags={
-    Name="sg"
+    Name = "{local.project}-{local.environment}-{local.application}-sg"
+    Project = local.project
+    Environment = local.environment
+    Application = local.application
+    Owner = local.owner
   }
-  vpc_id = aws_vpc.my_vpc.id
+  vpc_id = aws_vpc.vpc.id
 }
