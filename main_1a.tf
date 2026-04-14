@@ -52,3 +52,24 @@ resource "aws_route_table_association" "private_rta_1a" {
   subnet_id = aws_subnet.private_subnet_1a.id
   route_table_id = aws_route_table.private_rt_1a.id
 }
+
+# resources for 1a database subnet
+
+resource "aws_subnet" "database_subnet_1a" {
+  vpc_id = aws_vpc.vpc.id
+  cidr_block = var.database_subnet_cidr_1a
+  availability_zone = data.aws_availability_zones.az.names[0]
+}
+
+resource "aws_route_table" "database_rt_1a" {
+    vpc_id = aws_vpc.vpc.id
+    route {
+        cidr_block = var.database_subnet_cidr_1a
+       gateway_id = aws_nat_gateway.ngw_1a.id
+    }
+}
+
+resource "aws_route_table_association" "database_rta_1a" {
+  subnet_id = aws_subnet.database_subnet_1a.id
+  route_table_id = aws_route_table.database_rt_1a.id
+}
