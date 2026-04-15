@@ -10,7 +10,7 @@ resource "aws_subnet" "public_subnet_1a" {
 resource "aws_route_table" "public_rt_1a" {
     vpc_id = aws_vpc.vpc.id
     route {
-        cidr_block = var.public_subnet_cidr_1a
+        cidr_block = "0.0.0.0/0"
        gateway_id = aws_internet_gateway.igw.id
     }
 }
@@ -42,7 +42,7 @@ resource "aws_subnet" "private_subnet_1a" {
 resource "aws_route_table" "private_rt_1a" {
     vpc_id = aws_vpc.vpc.id
     route {
-        cidr_block = var.private_subnet_cidr_1a
+        cidr_block = "0.0.0.0/0"
        gateway_id = aws_nat_gateway.ngw_1a.id
     }
 }
@@ -63,7 +63,7 @@ resource "aws_subnet" "database_subnet_1a" {
 resource "aws_route_table" "database_rt_1a" {
     vpc_id = aws_vpc.vpc.id
     route {
-        cidr_block = var.database_subnet_cidr_1a
+        cidr_block = "0.0.0.0/0"
        gateway_id = aws_nat_gateway.ngw_1a.id
     }
 }
@@ -89,7 +89,7 @@ resource "aws_subnet" "public_subnet_1b" {
 resource "aws_route_table" "public_rt_1b" {
     vpc_id = aws_vpc.vpc.id
     route {
-        cidr_block = var.public_subnet_cidr_1b
+        cidr_block = "0.0.0.0/0"
        gateway_id = aws_internet_gateway.igw.id
     }
 }
@@ -121,7 +121,7 @@ resource "aws_subnet" "private_subnet_1b" {
 resource "aws_route_table" "private_rt_1b" {
     vpc_id = aws_vpc.vpc.id
     route {
-        cidr_block = var.private_subnet_cidr_1b
+        cidr_block = "0.0.0.0/0"
        gateway_id = aws_nat_gateway.ngw_1b.id
     }
 }
@@ -142,7 +142,7 @@ resource "aws_subnet" "database_subnet_1b" {
 resource "aws_route_table" "database_rt_1b" {
     vpc_id = aws_vpc.vpc.id
     route {
-        cidr_block = var.database_subnet_cidr_1b
+        cidr_block = "0.0.0.0/0"
        gateway_id = aws_nat_gateway.ngw_1b.id
     }
 }
