@@ -3,13 +3,10 @@
 **Inputs:**
 
 - vpc_cidr(Mandatory): User must supply
-
 - public_subnet_cidr_1a(Mandatory): User must supply
 - public_subnet_cidr_1b(Mandatory): User must supply
-
 - private_subnet_cidr_1b(Mandatory): User must supply
 - private_subnet_cidr_1a(Mandatory): User must supply
-
 - database_subnet_cidr_1a(Mandatory): User must supply
 - database_subnet_cidr_1b(Mandatory): User must supply
 
